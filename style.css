@@ -5,9 +5,14 @@
 */
 
 :root {
-    --bg-painter: #0a0a0a;
-    --bg-director: #141414;
-    --bg-scholar: #1f1f1f;
+    --bg-hero: #0d0d0d;
+    /* 極深黑灰 - 首頁入口 */
+    --bg-painter: #1a1a1a;
+    /* 炭灰色 - 畫家區域 */
+    --bg-director: #262626;
+    /* 中深灰 - 導演區域 */
+    --bg-scholar: #333333;
+    /* 偏淺的深灰 - 學者區域 */
     --accent: #007aff;
     /* Apple-style Electric Blue */
     --text-main: #ffffff;
@@ -52,7 +57,7 @@ section {
 
 /* Grayscale section backgrounds */
 #hero {
-    background-color: #050505;
+    background-color: var(--bg-hero);
 }
 
 #painter {
