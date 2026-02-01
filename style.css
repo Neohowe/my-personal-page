@@ -13,8 +13,8 @@
     /* 中深灰 - 導演區域 */
     --bg-scholar: #333333;
     /* 偏淺的深灰 - 學者區域 */
-    --accent: #007aff;
-    /* Apple-style Electric Blue */
+    --accent: #00ced1;
+    /* 藍綠色 (DarkTurquoise) */
     --text-main: #ffffff;
     --text-sub: rgba(255, 255, 255, 0.4);
     --transition-speed: 0.8s;
@@ -75,12 +75,16 @@ section {
 /* Typography */
 .big-title {
     font-size: clamp(4rem, 12vw, 10rem);
-    font-weight: 900;
-    letter-spacing: -0.05em;
+    font-weight: 200;
+    /* 改為纖細的黑體 */
+    letter-spacing: 0.05em;
+    /* 增加一點點字母間距，顯得更優雅 */
     line-height: 0.9;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     opacity: 0.9;
+    color: var(--accent);
+    /* 將大標題也套用藍綠色，增加視覺特徵 */
 }
 
 .sub-desc {
