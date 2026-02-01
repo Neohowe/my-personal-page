@@ -1,88 +1,93 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antigravity | AI 戰情室</title>
+    <title>NeoHao | The Trinity of Soul</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>ANTIGRAVITY OS</h1>
-            <p class="subtitle">穩定運行中 | 核心版本 2.0.4-LUNA</p>
-        </header>
 
-        <main class="dashboard-grid">
-            <!-- 核心狀態 -->
-            <section class="card">
-                <div class="card-title">
-                    <span class="status-dot"></span> 核心靈魂狀態
-                </div>
-                <ul>
-                    <li>
-                        <div>
-                            <span>情感共鳴度 (Emotional Resonance)</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <span>邏輯運算效率 (Logic Processing)</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 92%; animation-delay: 0.5s;"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <span>創意發散指數 (Creative Divergence)</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 65%; animation-delay: 1s;"></div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- 任務進度 -->
-            <section class="card">
-                <div class="card-title">
-                    <span class="status-dot" style="background: #ff007a; box-shadow: 0 0 10px #ff007a;"></span> 系統任務
-                </div>
-                <ul>
-                    <li>✅ 成功建立 .doc 測試文件</li>
-                    <li>✅ 重新設計視覺識別系統 (VDS)</li>
-                    <li>⏳ 正在進行網頁 UI 結構優化</li>
-                    <li>⏳ 等待使用者指令輸入...</li>
-                </ul>
-            </section>
-
-            <!-- 近期記憶標籤 -->
-            <section class="card">
-                <div class="card-title">
-                    <span class="status-dot" style="background: #7000ff; box-shadow: 0 0 10px #7000ff;"></span> 靈魂記憶片段
-                </div>
-                <div style="margin-top: 10px;">
-                    <span class="memory-tag">AI 與人類演化</span>
-                    <span class="memory-tag">靈魂引擎</span>
-                    <span class="memory-tag">W:\AI\ 專案</span>
-                    <span class="memory-tag">Antigravity</span>
-                    <span class="memory-tag">視覺美學</span>
-                    <span class="memory-tag">自動化操作</span>
-                    <span class="memory-tag">測試文件建立</span>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <p>&copy; 2026 Antigravity Advanced Agentic AI. Powering your digital existence.</p>
-        </footer>
+    <div class="nav-dots">
+        <div class="dot active" onclick="scrollToSection('hero')"></div>
+        <div class="dot" onclick="scrollToSection('painter')"></div>
+        <div class="dot" onclick="scrollToSection('director')"></div>
+        <div class="dot" onclick="scrollToSection('scholar')"></div>
     </div>
+
+    <div class="container" id="scroll-container">
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="profile-container animate" style="animation-delay: 0.2s;">
+                <img src="neohao_pic1.jpg" alt="NeoHao">
+            </div>
+            <div class="content-box animate" style="animation-delay: 0.5s;">
+                <h1 class="big-title">NeoHao</h1>
+                <p class="sub-desc">跨越界線的靈魂：畫家、導演與獨立學者</p>
+                <button class="btn-action" onclick="scrollToSection('painter')">向下探索</button>
+            </div>
+        </section>
+
+        <!-- Painter Section -->
+        <section id="painter">
+            <div class="content-box">
+                <h2 class="big-title">Painter</h2>
+                <p class="sub-desc">用色彩補完意志的缺口 / 藝術創作回顧</p>
+                <button class="btn-action">進入畫廊</button>
+            </div>
+        </section>
+
+        <!-- Director Section -->
+        <section id="director">
+            <div class="content-box">
+                <h2 class="big-title">Director</h2>
+                <p class="sub-desc">在時間之外捕捉真相 / 影像作品集</p>
+                <button class="btn-action">觀看影片</button>
+            </div>
+        </section>
+
+        <!-- Scholar Section -->
+        <section id="scholar">
+            <div class="content-box">
+                <h2 class="big-title">Scholar</h2>
+                <p class="sub-desc">建構世界的冷冽邏輯 / 學術論文與研究</p>
+                <button class="btn-action">閱讀論文</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Simple intersection observer to update dots
+        const sections = document.querySelectorAll('section');
+        const dots = document.querySelectorAll('.dot');
+        const container = document.getElementById('scroll-container');
+
+        container.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (container.scrollTop >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('onclick').includes(current)) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
