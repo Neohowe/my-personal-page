@@ -75,8 +75,8 @@ section {
 /* Typography */
 .big-title {
     font-size: clamp(4rem, 12vw, 10rem);
-    font-weight: 200;
-    /* 改為纖細的黑體 */
+    font-weight: 100;
+    /* 改為極致纖細的黑體 */
     letter-spacing: 0.05em;
     /* 增加一點點字母間距，顯得更優雅 */
     line-height: 0.9;
